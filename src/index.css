@@ -16,7 +16,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-button, h1, h2, h3, a, input, a, li, p {
+button, h1, h2, h3, h4, h5, h6, a, input, a, li, p {
   all: unset;
 }
 

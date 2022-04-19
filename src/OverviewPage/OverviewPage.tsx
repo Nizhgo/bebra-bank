@@ -9,9 +9,13 @@ const OverviewPage = () =>
 {
     return(
         <OverviewContainer>
-            <Balance/>
-            <YourCard/>
-            <ResentTransactions/>
+            <div style={{display:'flex', flexDirection:'column'}}>
+                <Balance/>
+                <YourCard/>
+            </div>
+            <div style={{display:'flex', flexDirection:'column'}}>
+                <ResentTransactions/>
+            </div>
         </OverviewContainer>
     )
 }
@@ -19,15 +23,14 @@ const OverviewPage = () =>
 const OverviewContainer = styled(BodyContainer)`
   margin-top: 4em;
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-auto-rows: fit-content();
+  grid-template-columns: 3fr 5fr;
   gap: 30px;
   grid-column-gap: 40px;
-  @media(max-width: 512px)
+  @media(max-width: 613px)
   {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 35px;
   }
 `
 

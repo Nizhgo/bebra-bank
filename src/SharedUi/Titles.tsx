@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const MainTitle = styled.h2`
-  margin-top: 60px;
+  margin-top: 24px;
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
@@ -10,11 +10,10 @@ const MainTitle = styled.h2`
 
 const Title = styled(MainTitle)`
 font-size: 26px;
-  margin-top: 30px;
+  //margin-top: 30px;
 `
 
 const Subtitle = styled.h6`
-  margin: 0;
   font-family: 'Space Grotesk',monospace;
   font-style: normal;
   font-weight: 500;

@@ -4,7 +4,7 @@ const TransactionBlock = () =>{
     return(
         <TransactionBlockContainer>
             <div style={{display:'flex'}}>
-                <IconWrapper>Bв</IconWrapper>
+                <IconWrapper>BB</IconWrapper>
                 <div style={{width:'12px'}}/>
                 <InfoContainer>
                     <ShopName>Vkusvill</ShopName>
@@ -24,7 +24,7 @@ const TransactionBlockContainer = styled.div`
   align-items: center;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
-  padding-inline: 1em;
+  //padding-inline: 1em;
 `
 
 
