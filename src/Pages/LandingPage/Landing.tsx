@@ -1,12 +1,12 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import styled from "styled-components";
-import BodyContainer from "../SharedUi/BodyContainer";
-import {FilledButton} from "../SharedUi/Buttons";
-import LandingCard from "../Images/LandingCard.png"
-import AccountBoxImg from "../Images/BoxImage1.png"
-import ItsEasyImg from "../Images/ItsEasyBox.png"
-import LandingCardContainerBackground from "../Images/LandingCardContainerBackground.png"
+import BodyContainer from "../../SharedUi/BodyContainer";
+import {FilledButton} from "../../SharedUi/Buttons";
+import LandingCard from "../../Images/LandingCard.png"
+import AccountBoxImg from "../../Images/BoxImage1.png"
+import ItsEasyImg from "../../Images/ItsEasyBox.png"
+import LandingCardContainerBackground from "../../Images/LandingCardContainerBackground.png"
 import LandingBox from "./LandingBox";
 
 const Landing = () =>

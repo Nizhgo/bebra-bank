@@ -1,21 +1,21 @@
 import React, {useRef, useState} from "react";
 import styled from "styled-components";
-import BodyContainer from "../SharedUi/BodyContainer";
-import Input from "../SharedUi/Input";
+import BodyContainer from "../../SharedUi/BodyContainer";
+import Input from "../../SharedUi/Input";
 import {Formik} from "formik";
-import {FilledButton} from "../SharedUi/Buttons";
-import {MainTitle, Title} from "../SharedUi/Titles";
-import BlackCard from "../Images/Cards/BlackCard.svg"
-import WhiteCard from "../Images/Cards/WhiteCard.svg"
-import MalevichCard from  "../Images/Cards/MalevichCard.svg"
-import JapanCard from "../Images/Cards/JapanCard.svg"
-import AmazingCard from "../Images/Cards/AmazingCard.svg"
-import DigitalCard from "../Images/Cards/BlueDigital.svg"
-import FrogCard from "../Images/Cards/FrogCard.svg"
-import PaintCard from "../Images/Cards/PaintCard.svg"
-import {Subtitle} from "../SharedUi/Titles";
+import {FilledButton} from "../../SharedUi/Buttons";
+import {MainTitle, Title} from "../../SharedUi/Titles";
+import BlackCard from "../../Images/Cards/BlackCard.svg"
+import WhiteCard from "../../Images/Cards/WhiteCard.svg"
+import MalevichCard from "../../Images/Cards/MalevichCard.svg"
+import JapanCard from "../../Images/Cards/JapanCard.svg"
+import AmazingCard from "../../Images/Cards/AmazingCard.svg"
+import DigitalCard from "../../Images/Cards/BlueDigital.svg"
+import FrogCard from "../../Images/Cards/FrogCard.svg"
+import PaintCard from "../../Images/Cards/PaintCard.svg"
+import {Subtitle} from "../../SharedUi/Titles";
 import * as yup from 'yup';
-import {ErrorBox} from "../SharedUi/ErrorBox";
+import {ErrorBox} from "../../SharedUi/ErrorBox";
 
 interface ISignUpForm {
     name: string,

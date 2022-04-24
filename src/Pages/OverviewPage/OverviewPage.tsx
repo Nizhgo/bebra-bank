@@ -1,8 +1,8 @@
-import BodyContainer from "../SharedUi/BodyContainer";
-import YourCard from "./Components/YourCards";
-import Balance from "./Components/Balance";
+import BodyContainer from "../../SharedUi/BodyContainer";
+import YourCardsBlock from "./Components/YourCardsBlock";
+import BalanceBlock from "./Components/BalanceBlock";
 import styled from "styled-components";
-import ResentTransactions from "./Components/ResentTransactions";
+import ResentTransactionsBlock from "./Components/ResentTransactionsBlock";
 
 
 const OverviewPage = () =>
@@ -10,11 +10,11 @@ const OverviewPage = () =>
     return(
         <OverviewContainer>
             <div style={{display:'flex', flexDirection:'column'}}>
-                <Balance/>
-                <YourCard/>
+                <BalanceBlock/>
+                <YourCardsBlock/>
             </div>
             <div style={{display:'flex', flexDirection:'column'}}>
-                <ResentTransactions/>
+                <ResentTransactionsBlock/>
             </div>
         </OverviewContainer>
     )

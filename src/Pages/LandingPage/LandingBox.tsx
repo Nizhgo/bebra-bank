@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import testImage from "../Images/image.webp"
-import {FilledButton} from "../SharedUi/Buttons";
+import {FilledButton} from "../../SharedUi/Buttons";
 interface IBox {
     title: string,
     image: string,

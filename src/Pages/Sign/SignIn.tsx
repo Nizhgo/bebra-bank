@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import BodyContainer from "../SharedUi/BodyContainer";
-import {MainTitle, Title} from "../SharedUi/Titles";
-import Input from "../SharedUi/Input";
-import {FilledButton} from "../SharedUi/Buttons";
+import BodyContainer from "../../SharedUi/BodyContainer";
+import {MainTitle, Title} from "../../SharedUi/Titles";
+import Input from "../../SharedUi/Input";
+import {FilledButton} from "../../SharedUi/Buttons";
 import {Formik} from "formik";
-import {Subtitle} from "../SharedUi/Titles";
-import {ErrorBox} from "../SharedUi/ErrorBox";
+import {Subtitle} from "../../SharedUi/Titles";
+import {ErrorBox} from "../../SharedUi/ErrorBox";
 import * as yup from "yup";
 
 const ValidationSchema = yup.object().shape({
@@ -27,7 +27,7 @@ const SignIn = () =>
             }} onSubmit={(values => {alert(JSON.stringify(values))})}>
                 {({handleSubmit, handleChange, values, errors, handleBlur, touched}) =>
 
-                    <form style={{marginTop: '40px', maxWidth: '400px'}} onSubmit={handleSubmit}>
+                    <form style={{marginTop: '15px', maxWidth: '400px'}} onSubmit={handleSubmit}>
                         <ErrorBox/>
                         <Input title={'email'} type={'email'} onChange={handleChange} value={values.email}/>
                         <ErrorBox/>

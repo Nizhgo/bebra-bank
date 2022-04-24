@@ -1,21 +1,25 @@
 import React from "react";
 import styled from "styled-components";
-import {FilledButton} from "../../SharedUi/Buttons";
-import ArrayForwardIcon from "../../Images/arrow_forward_white_24dp.svg"
-import TopUpIcon from "../../Images/account_balance_wallet_white_24dp.svg"
+import {FilledButton} from "../../../SharedUi/Buttons";
+import ArrayForwardIcon from "../../../Images/arrow_forward_white_24dp.svg"
+import TopUpIcon from "../../../Images/account_balance_wallet_white_24dp.svg"
+import {Link} from "react-router-dom";
 
-const Balance = () =>
+const BalanceBlock = () =>
 {
     return(
-    <BalanceContainer>
+    <BalanceBlockContainer>
         <BalanceTitle>Balance:</BalanceTitle>
         <BalanceAmount>B 3124.4</BalanceAmount>
             <BalanceButtonsContainer>
+                <Link to={'/pay-or-transfer'}>
                 <StrangeButton icon={ArrayForwardIcon} header={'Pay or transfer'}/>
+                </Link>
+                <Link to={'/topup'}>
                 <StrangeButton icon={TopUpIcon} header={'Top Up'}/>
-
+                </Link>
             </BalanceButtonsContainer>
-    </BalanceContainer>
+    </BalanceBlockContainer>
     )
 }
 
@@ -36,21 +40,22 @@ const StrangeButton = (props: IBalanceButton) =>
     )
 }
 
-const BalanceContainer = styled.div`
+const BalanceBlockContainer = styled.div`
   grid-column-start: 1;
   display: flex;
   flex-direction: column;
   padding: 1.2em;
   background: #121212;
-  border: 1px solid #FFFFFF;
+  border: 3px solid #2D2D2D;
   box-sizing: border-box;
-  border-radius: 20px;
+  border-radius: 12px;
   `
 const BalanceButtonContent = styled.div`
+  margin: 0 auto;
+  width: fit-content;
   display: flex;
   justify-items: center;
   align-items: center;
-  margin: 0 auto;
   
   h6 {
     font-size: 13px;
@@ -60,27 +65,33 @@ const BalanceButtonContent = styled.div`
 `
 
 const BalanceButtonsContainer = styled.div`
- margin-top: 1em;
- // display: grid;
- // grid-template-columns: 1fr 1fr;
- //// grid-template-rows: 2fr 1fr;
- // grid-column-gap: 1.4em;
+  margin-top: 1em;
   display: flex;
-  gap: 1.4em;
+  gap: 1.2em;
+  text-align: center;
 `
 
-const BalanceButton = styled.button`
-  background: black;
-  padding-inline: 0.6em;
-  padding-top: 0.3em;
-  padding-bottom: 0.4em;
+// const BalanceButton = styled.button`
+//   background: #2f2f2f;
+//   padding-inline: 0.6em;
+//   padding-top: 0.3em;
+//   padding-bottom: 0.4em;
+//   width: 100px;
+//   font-size: 14px;
+//   min-width: 4em;
+//   border: 2px solid #2f2f2f;
+//   border-radius: 100px;
+//   text-align: center;
+// `
+const BalanceButton = styled(FilledButton)
+`
+  min-width: inherit;
   width: 100px;
-  font-size: 14px;
-  min-width: 4em;
-  border: 1px solid #2f2f2f;
-  border-radius: 100px;
-`
+  background-color: #212121;
 
+  &:hover {
+    background-color: #0a0a0a;
+  }`
 
 const BalanceTitle = styled.p`
   margin-top: 15px;
@@ -103,4 +114,4 @@ const BalanceAmount = styled.p`
 
 `
 
-export default Balance;
+export default BalanceBlock;
