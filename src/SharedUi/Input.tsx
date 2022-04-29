@@ -4,25 +4,33 @@ interface IInput{
     title: string,
     type: 'text' | 'email' | 'password' | 'date';
     value: any,
-    onChange: any,
+    onChange?: any,
     onKeyPress?: any,
     onBlur?: any,
+    error?: string,
 }
 const Input = (props: IInput) =>
 {
+    const {title, type, value, onChange, onKeyPress, onBlur, error} = props;
     return(
+        <>
+            {error !== undefined &&
+                <ErrorBox>
+                <p>{error}</p>
+            </ErrorBox>}
         <InputWrapper>
             <div style={{alignItems:'center'}}>
                 <UpperText>
-                    {props.title}
+                    {title}
                 </UpperText>
             </div>
-            <input style={{textAlign:'start', width:'100%',}} type={props.type} name={props.title} value={props.value} onChange={props.onChange} onKeyPress={props.onKeyPress} onBlur={props.onBlur}/>
+            <input style={{textAlign:'start', width:'100%',}} type={type} name={title} value={value} onChange={onChange} onKeyPress={onKeyPress} onBlur={onBlur}/>
         </InputWrapper>
+        </>
     )
 }
 const InputWrapper = styled.label`
-  margin: auto;
+  //margin: auto;
   font-family: 'Space Grotesk', sans-serif;
   display: block;
   width: auto;
@@ -36,6 +44,21 @@ const InputWrapper = styled.label`
   
   input:focus {
     color: #f5f5f5;
+  }
+`
+
+const ErrorBox = styled.div`
+    height: 26px;
+    display: flex;
+    flex-direction: column;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+    padding: 2px;
+  
+  p {
+    font-size: 12px;
+    color: #d55a5a;
+    bottom: 0;
   }
 `
 

@@ -23,7 +23,6 @@ const ResentTransactionsBlock = () =>
 const ResentTransactionsComponentContainer = styled.div`
   width: 100%;
   display: flex;
-  padding-inline: 0.5em;
   flex-direction: column;
   grid-row-start: 1;
   grid-column-start: 2;

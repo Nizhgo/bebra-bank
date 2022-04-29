@@ -41,5 +41,17 @@ const DashButton = styled.button`
 
 `
 
+const SmallButton = styled.button`
+    border-radius: 20px;
+    background-color: #121212;
+    padding-inline: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    border: 2px solid #2D2D2D;
+`
 
-export {FilledButton, DashButton};
+
+export {FilledButton, DashButton, SmallButton};

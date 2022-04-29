@@ -4,6 +4,7 @@ import BodyContainer from "../../SharedUi/BodyContainer";
 import {Card} from "../../SharedUi/Card";
 import styled from "styled-components";
 import {FilledButton} from "../../SharedUi/Buttons";
+import {Link} from "react-router-dom";
 
 const PayOrTransferPage = () =>
 {
@@ -11,15 +12,18 @@ return(
     <BodyContainer>
         <Title>Pay or transfer</Title>
         <div style={{marginTop:'1.49em', display:'flex', gap:'1em'}}>
-            <Card style={{width:'189px', height:'132px'}}>
-                <h6>Transfer</h6>
-                <p style={{color:"grey", fontSize:'14px', marginTop:'0.4em'}}>Transfer money to another bebra bank user</p>
-            </Card>
-            <Card style={{width:'189px', height:'132px'}}>
-                <h6>Donate</h6>
-                <p style={{color:"grey", fontSize:'14px', marginTop:'0.4em'}}>Donate bebra</p>
-            </Card>
-
+            <Link to={'/transfer'}>
+                <Card style={{width:'170px', height:'132px'}}>
+                    <h6>Transfer</h6>
+                    <p style={{color:"grey", fontSize:'14px', marginTop:'0.4em'}}>Transfer money to another bebra bank user</p>
+                </Card>
+            </Link>
+            <Link to={'/donate'}>
+                <Card style={{width:'170px', height:'132px'}}>
+                    <h6>Donate</h6>
+                    <p style={{color:"grey", fontSize:'14px', marginTop:'0.4em'}}>Donate bebra</p>
+                </Card>
+            </Link>
         </div>
         <div style={{marginTop:'3em'}}/>
         <Title>Test payment</Title>

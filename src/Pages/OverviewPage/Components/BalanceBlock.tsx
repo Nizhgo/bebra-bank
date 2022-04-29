@@ -71,25 +71,14 @@ const BalanceButtonsContainer = styled.div`
   text-align: center;
 `
 
-// const BalanceButton = styled.button`
-//   background: #2f2f2f;
-//   padding-inline: 0.6em;
-//   padding-top: 0.3em;
-//   padding-bottom: 0.4em;
-//   width: 100px;
-//   font-size: 14px;
-//   min-width: 4em;
-//   border: 2px solid #2f2f2f;
-//   border-radius: 100px;
-//   text-align: center;
-// `
 const BalanceButton = styled(FilledButton)
 `
   min-width: inherit;
   width: 100px;
+  height: 32px;
   background-color: #212121;
 
-  &:hover {
+  :hover {
     background-color: #0a0a0a;
   }`
 

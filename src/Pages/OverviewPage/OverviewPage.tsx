@@ -21,7 +21,6 @@ const OverviewPage = () =>
 }
 
 const OverviewContainer = styled(BodyContainer)`
-  margin-top: 4em;
   display: grid;
   grid-template-columns: 3fr 5fr;
   gap: 30px;

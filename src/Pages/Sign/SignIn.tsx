@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import styled from "styled-components";
 import BodyContainer from "../../SharedUi/BodyContainer";
 import {MainTitle, Title} from "../../SharedUi/Titles";
@@ -6,8 +6,10 @@ import Input from "../../SharedUi/Input";
 import {FilledButton} from "../../SharedUi/Buttons";
 import {Formik} from "formik";
 import {Subtitle} from "../../SharedUi/Titles";
-import {ErrorBox} from "../../SharedUi/ErrorBox";
 import * as yup from "yup";
+import {InputColumnContainer} from "../../SharedUi/InputColumnContainer";
+import firebaseApp from "../../Firebase/FirebaseConfig";
+import {AuthContext} from "../../Firebase/AuthContext";
 
 const ValidationSchema = yup.object().shape({
     email: yup.string().email('Incorrect email format').required('Required'),
@@ -15,6 +17,20 @@ const ValidationSchema = yup.object().shape({
 
 const SignIn = () =>
 {
+    const {currentUser} = useContext(AuthContext);
+    const handleSubmit = async (values: {email: string, password: string}) => {
+        try {
+            await firebaseApp
+                .auth()
+                .signInWithEmailAndPassword(values.email, values.password).
+            then((e) => {
+                    console.log(e.user?.email);
+                });
+            console.log('ok');
+        } catch (error) {
+            alert(error);
+        }
+    }
     return(
         <BodyContainer>
             <MainTitle>
@@ -24,18 +40,18 @@ const SignIn = () =>
             <Formik initialValues={{
                 email: '',
                 password: '',
-            }} onSubmit={(values => {alert(JSON.stringify(values))})}>
+            }} onSubmit={(values => handleSubmit(values))}>
                 {({handleSubmit, handleChange, values, errors, handleBlur, touched}) =>
 
-                    <form style={{marginTop: '15px', maxWidth: '400px'}} onSubmit={handleSubmit}>
-                        <ErrorBox/>
-                        <Input title={'email'} type={'email'} onChange={handleChange} value={values.email}/>
-                        <ErrorBox/>
-                        <Input title={'password'} type={'password'} onChange={handleChange} value={values.password}/>
+                    <InputColumnContainer>
+                    <form onSubmit={handleSubmit}>
+                        <Input title={'email'} type={'email'} onChange={handleChange} value={values.email} error={''}/>
+                        <Input title={'password'} type={'password'} onChange={handleChange} value={values.password} error={''}/>
                         <ButtonWrapper>
                             <FilledButton type={'submit'}>LogIn</FilledButton>
                         </ButtonWrapper>
                     </form>
+                    </InputColumnContainer>
                 }
             </Formik>
         </BodyContainer>

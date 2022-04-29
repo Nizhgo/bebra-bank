@@ -5,7 +5,7 @@ const BodyContainer = styled.div`
   margin-inline: auto;
   display: flex;
   flex-direction: column;
-  margin-top: 16px;
+  margin-top: 4em;
   padding-inline: 1.314em;
 `
 
