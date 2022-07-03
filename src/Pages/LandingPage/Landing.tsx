@@ -3,8 +3,12 @@ import {Link} from "react-router-dom";
 import styled from "styled-components";
 import BodyContainer from "../../SharedUi/BodyContainer";
 import {FilledButton} from "../../SharedUi/Buttons";
-import LandingCard from "../../Images/LandingCard.png"
+import OlegT from "../../Images/oleg-tinkov.png"
+import BrawlS from "../../Images/BrawlS.png"
+import Ryan from "../../Images/Ryan.png"
+import Trump from "../../Images/Trump.png"
 import AccountBoxImg from "../../Images/BoxImage1.png"
+import LandingCard from "../../Images/LandingCard.png";
 import ItsEasyImg from "../../Images/ItsEasyBox.png"
 import LandingCardContainerBackground from "../../Images/LandingCardContainerBackground.png"
 import LandingBox from "./LandingBox";
@@ -14,25 +18,24 @@ const Landing = () =>
     return(
         <BodyContainer style={{textAlign:'center'}}>
             <LandingHeader>
-                The best bank for bebra <br/><b>in the world</b>*
+                Пожалуй, лучший бебра банк<br/><b>в мире</b>*
             </LandingHeader>
             <div style={{height: '20px'}}/>
-            <Link to={'/signup'}>
-                <FilledButton>Get a free account</FilledButton>
-            </Link>
+            <div style={{display: 'flex', flexDirection:'column', gap: '0.2em', color: 'gray'}}>
+                <p>Work in progress</p>
+                <p>Регистрация будет открыта позднее</p>
+            </div>
             <CardImgWrapper>
                 <div style={{height: '120px'}}/>
                 <LandingCardImg src={LandingCard}/>
             </CardImgWrapper>
             <div style={{height: '120px'}}/>
             <BoxContainer>
-                <LandingBox title={'Link all your accounts in one place'} image={AccountBoxImg} linkTitle={'Open Banking'} link={'#'}/>
-                <LandingBox title={'Investing is easy! Start even with 1 bebra'} image={ItsEasyImg} linkTitle={'Open Banking'} link={'#'}/>
+                <LandingBox title={'Комиссия на SWIFT 100% + 30₽'} image={OlegT} linkTitle={'Ого, выговно'} link={'#'}/>
+                <LandingBox title={'140 мегаящиков каждому новому пользователю'} image={BrawlS} linkTitle={'Получить'} link={'#'}/>
+                <LandingBox title={'Для самых крутых парней'} image={Ryan} linkTitle={'Я такой'} link={'#'}/>
+                <LandingBox title={'Инвестиции это просто'} image={ItsEasyImg} linkTitle={'К слот машине'} link={'#'}/>
             </BoxContainer>
-            <div style={{height: '100px'}}/>
-            <hr/>
-            <p style={{textAlign:'right'}}>Aleksey Nizhgorodov</p>
-            <div style={{height: '30px'}}/>
         </BodyContainer>
     )
 }
@@ -45,11 +48,10 @@ const LandingHeader = styled.h2`
 
   b {
     color: #6b4dcb;
-    font-weight: 800;
+    font-weight: 700;
   }
 `
-const BoxContainer = styled.div`
-  margin-inline: 14px;
+const BoxContainer = styled.div`;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: auto;
