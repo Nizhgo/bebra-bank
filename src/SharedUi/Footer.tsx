@@ -7,10 +7,10 @@ const Footer = () => {
         <FooterContainer>
             <ThreeGridContainer>
                 <SocialMediaLinksContainer>
-                    <SocialMediaLinksItem href={'#'} target={'_blank'}>
+                    <SocialMediaLinksItem href={'https://instagram.com/bebrabank?igshid=YmMyMTA2M2Y='} target={'_blank'}>
                         инстаграм
                     </SocialMediaLinksItem>
-                    <SocialMediaLinksItem href={'#'} target={'_blank'}>
+                    <SocialMediaLinksItem href={'https://vt.tiktok.com/ZSdoAQ8VH'} target={'_blank'}>
                         тикток
                     </SocialMediaLinksItem>
                     <SocialMediaLinksItem href={'https://github.com/nizhgo/bebra-bank'} target={'_blank'}>
@@ -35,17 +35,17 @@ export default Footer;
 
 const FooterWrapper = styled.div`
     margin-top: 4em;
-    ;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-    padding: 15px;
+
 `
 
 const LegalInformationContainer = styled.div`
     margin-top: 22px;
+    font-size: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,6 +61,7 @@ const FooterContainer = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    padding: 10px;
 `
 
 const EmailContainer = styled.div`

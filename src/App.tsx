@@ -11,8 +11,8 @@ function App() {
           <AppContainer>
               <Header/>
               <Landing/>
+              <Footer/>
           </AppContainer>
-          <Footer/>
       </AppWrapper>
 
   );
@@ -28,7 +28,6 @@ const AppContainer = styled.div`
 
 
 const AppWrapper = styled.div`
-
     max-width: 1024px;
     width: 100%;
     margin: 0 auto;
