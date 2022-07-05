@@ -1,16 +1,13 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {AuthContext, AuthProvider} from "./Firebase/AuthContext";
 
 const container = document.getElementById('root')!;
 const root = ReactDOM.createRoot(container);
 root.render(
-    <AuthProvider>
     <App/>
-    </AuthProvider>
 );
 
 // If you want to start measuring performance in your firebaseApp, pass a function
