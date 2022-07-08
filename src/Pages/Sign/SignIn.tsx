@@ -34,9 +34,9 @@ const SignIn = () =>
     return(
         <BodyContainer>
             <MainTitle>
-                Log in to BebraBank
+                Авторизация
             </MainTitle>
-            <Subtitle>Enter your email and password</Subtitle>
+            <Subtitle>Введите вашу почту и пароль</Subtitle>
             <Formik initialValues={{
                 email: '',
                 password: '',
@@ -45,10 +45,10 @@ const SignIn = () =>
 
                     <InputColumnContainer>
                     <form onSubmit={handleSubmit}>
-                        <Input title={'email'} type={'email'} onChange={handleChange} value={values.email} error={''}/>
-                        <Input title={'password'} type={'password'} onChange={handleChange} value={values.password} error={''}/>
+                        <Input title={'Почта'} type={'email'} onChange={handleChange} value={values.email} error={''}/>
+                        <Input title={'Пароль'} type={'password'} onChange={handleChange} value={values.password} error={''}/>
                         <ButtonWrapper>
-                            <FilledButton type={'submit'}>LogIn</FilledButton>
+                            <FilledButton type={'submit'}>Войти</FilledButton>
                         </ButtonWrapper>
                     </form>
                     </InputColumnContainer>

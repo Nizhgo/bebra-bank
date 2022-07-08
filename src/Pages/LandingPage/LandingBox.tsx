@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import testImage from "../Images/image.webp"
 import {FilledButton} from "../../SharedUi/Buttons";
+import {Link} from "react-router-dom";
 interface IBox {
     title: string,
     image: string,
@@ -16,7 +17,11 @@ const LandingBox = (props: IBox) =>
                 {props.title}
             </BoxTitle>
             <div>
-                <FilledButton>{props.linkTitle}</FilledButton>
+                <FilledButton>
+                    <Link to={props.link}>
+                        {props.linkTitle}
+                    </Link>
+                </FilledButton>
             </div>
         </BoxCard>
     )

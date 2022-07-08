@@ -9,7 +9,7 @@ const Header = () =>
     const path = useLocation().pathname;
     const {currentUser} = useContext(AuthContext);
     return(
-        <div style={{maxWidth: '1000px', marginInline:"auto"}}>
+        <HeaderWrapper>
         <HeaderContainer>
             {currentUser && path !== '/'?
                 <>
@@ -17,7 +17,7 @@ const Header = () =>
                         <HeaderLogo src={logo}/>
                     </Link>
                     <Link to={'/profile'}>
-                        <HeaderMenuItem>Profile</HeaderMenuItem>
+                        <HeaderMenuItem>Профиль</HeaderMenuItem>
                     </Link>
                 </>
                 :
@@ -26,19 +26,27 @@ const Header = () =>
                         <HeaderLogo src={logo}/>
                     </Link>
                     <Link to={'/signin'}>
-                        <HeaderMenuItem>Account</HeaderMenuItem>
+                        <HeaderMenuItem>Войти</HeaderMenuItem>
                     </Link>
                 </>
             }
         </HeaderContainer>
-        </div>
+        </HeaderWrapper>
     )
 }
 
+const HeaderWrapper = styled.div`
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 3px;
+`
 const HeaderContainer = styled.div`
-  padding-top: 15px;
-  padding-inline: 10px;
-    display: flex;
+  width: 100%;
+  display: flex;
   justify-content: space-between;
   align-items: center;
 `
@@ -46,12 +54,14 @@ const HeaderContainer = styled.div`
 const HeaderLogo = styled.img`
   width: 168px;
   height: 36px;
+  cursor: pointer;
 `
 
 const HeaderMenuItem = styled.a`
   font-style: normal;
   font-weight: 700;
   font-size: 15px;
+  cursor: pointer;
 `
 
 export default Header;
