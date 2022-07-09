@@ -63,6 +63,8 @@ function App() {
 
 
 const AppContainer = styled.div`
+    width: 100%;
+    box-sizing: border-box;
     padding-inline: 10px;
     display: flex;
     flex-direction: column;
@@ -74,7 +76,6 @@ const AppContainer = styled.div`
 const AppWrapper = styled.div`
     max-width: 1024px;
     width: 100%;
-    min-height: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;

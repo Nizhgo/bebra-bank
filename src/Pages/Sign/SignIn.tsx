@@ -45,8 +45,8 @@ const SignIn = () =>
 
                     <InputColumnContainer>
                     <form onSubmit={handleSubmit}>
-                        <Input title={'Почта'} type={'email'} onChange={handleChange} value={values.email} error={''}/>
-                        <Input title={'Пароль'} type={'password'} onChange={handleChange} value={values.password} error={''}/>
+                        <Input title={'Почта'} type={'email'} onChange={handleChange} value={values.email} error={''} valueName={'email'}/>
+                        <Input title={'Пароль'} type={'password'} onChange={handleChange} value={values.password} error={''} valueName={'password'}/>
                         <ButtonWrapper>
                             <FilledButton type={'submit'}>Войти</FilledButton>
                         </ButtonWrapper>

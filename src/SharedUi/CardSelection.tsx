@@ -67,6 +67,8 @@ const CardsWrapper = styled.div`
     gap: 20px;
     flex-wrap: wrap;
     height: auto;
+    align-items: center;
+    overflow-y: unset;
   @media(max-width: 512px)
   {
     margin-inline: -1.314em;

@@ -3,6 +3,7 @@ import styled from "styled-components";
 interface IInput{
     title: string,
     type: 'text' | 'email' | 'password' | 'date';
+    valueName?: string,
     value: any,
     onChange?: any,
     onKeyPress?: any,
@@ -11,7 +12,7 @@ interface IInput{
 }
 const Input = (props: IInput) =>
 {
-    const {title, type, value, onChange, onKeyPress, onBlur, error} = props;
+    const {title, type, value, onChange, onKeyPress, onBlur, error, valueName} = props;
     return(
         <>
             {error !== undefined &&
@@ -24,7 +25,7 @@ const Input = (props: IInput) =>
                     {title}
                 </UpperText>
             </div>
-            <input style={{textAlign:'start', width:'100%',}} type={type} name={title} value={value} onChange={onChange} onKeyPress={onKeyPress} onBlur={onBlur}/>
+            <input style={{textAlign:'start', width:'100%',}} type={type} name={valueName} value={value} onChange={onChange} onKeyPress={onKeyPress} onBlur={onBlur}/>
         </InputWrapper>
         </>
     )

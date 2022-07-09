@@ -1,4 +1,4 @@
-import React, {useContext, useRef, useState} from "react";
+import React, {useContext, useEffect, useRef, useState} from "react";
 import styled from "styled-components";
 import BodyContainer from "../../SharedUi/BodyContainer";
 import Input from "../../SharedUi/Input";
@@ -24,10 +24,10 @@ interface ISignUpForm {
     //date: number,
 }
 const ValidationSchema = yup.object().shape({
-    name: yup.string().typeError('The name must consist of only letters').required('Required'),
-    surname: yup.string().typeError('The surname must consist of only letters').required('Required'),
-    email: yup.string().email('Incorrect email format').required('Required'),
-    password: yup.string().min(6, 'Must be at least 6 symbols').required('Required'),
+    name: yup.string().typeError('Имя может содержать только буквы').required('Обязательно'),
+    surname: yup.string().typeError('Фамилия может содержать только буквы').required('Обязательно'),
+    email: yup.string().email('Неправильный формат почты').required('Обязательно'),
+    password: yup.string().min(6, 'Длина не менее 6 символов').required('Обязательно'),
 });
 
 
@@ -36,6 +36,9 @@ const SignUp = () =>
 {
     const [selectedCard, setSelectedCard] = useState<string>(BlackCard);
     const {currentUser} = useContext(AuthContext);
+    useEffect(() => {
+        window.scrollTo(0,0);
+    }, []);
     const onSubmit = async (values: {name: string, surname: string, email: string, password: string}) => {
         try {
             await firebaseApp
@@ -48,8 +51,8 @@ const SignUp = () =>
     }
     return(
         <BodyContainer>
-        <MainTitle>Creating a account to BebraBank</MainTitle>
-            <Subtitle>Enter your name and surname, email</Subtitle>
+        <MainTitle>Добро пожаловать в семью Бебра Банка!</MainTitle>
+            <Subtitle>Введите ваше имя, фамилию, почту и придумайте пароль</Subtitle>
             <Formik initialValues={{
                 name: '',
                 surname: '',
@@ -60,23 +63,22 @@ const SignUp = () =>
                     <>
                     <form onSubmit={handleSubmit}>
                         <InputColumnContainer>
-                            <Input title={'name'} type={'text'} value={values.name} onChange={handleChange} onBlur={handleBlur} error={touched.name && errors.name? errors.name : ''}/>
-                            <Input title={'surname'} type={'text'} value={values.surname} onChange={handleChange} onBlur={handleBlur} error={touched.surname && errors.surname? errors.surname : ''}/>
-                            <Input title={'email'} type={'email'} value={values.email} onChange={handleChange} onBlur={handleBlur} error={touched.email && errors.email? errors.email : ''}/>
-                            <Input title={'password'} type={'password'} value={values.password} onChange={handleChange} onBlur={handleBlur} error={touched.password && errors.password? errors.password : ''}/>
+                            <Input title={'Имя'} type={'text'} valueName={'name'} value={values.name} onChange={handleChange} onBlur={handleBlur} error={touched.name && errors.name? errors.name : ''}/>
+                            <Input title={'Фамилия'} type={'text'} valueName={'surname'} value={values.surname} onChange={handleChange} onBlur={handleBlur} error={touched.surname && errors.surname? errors.surname : ''}/>
+                            <Input title={'Почта'} type={'email'} valueName={'email'} value={values.email} onChange={handleChange} onBlur={handleBlur} error={touched.email && errors.email? errors.email : ''}/>
+                            <Input title={'Пароль'} type={'password'} valueName={'password'} value={values.password} onChange={handleChange} onBlur={handleBlur} error={touched.password && errors.password? errors.password : ''}/>
                         </InputColumnContainer>
                         <div style={{marginTop:'50px'}}/>
-                        <Title>Choose the design of your card</Title>
+                        <Title>Выберите дизайн вашей карты</Title>
                         <div style={{marginTop:'24px'}}/>
                         <CardSelection selectedCard={selectedCard} setSelectedCard={setSelectedCard}/>
                         <ButtonWrapper>
-                        <FilledButton type='submit'>SignUn</FilledButton>
+                        <FilledButton type='submit'>Создать аккаунт</FilledButton>
                         </ButtonWrapper>
                     </form>
                     </>
                 }
             </Formik>
-
 </BodyContainer>
         )
 }
