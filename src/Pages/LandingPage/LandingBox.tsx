@@ -1,17 +1,17 @@
 import React from "react";
-import styled from "styled-components";
-import testImage from "../Images/image.webp"
-import {FilledButton} from "../../SharedUi/Buttons";
 import {Link} from "react-router-dom";
+import styled from "styled-components";
+import {FilledButton} from "../../components/Buttons";
+
 interface IBox {
     title: string,
     image: string,
     linkTitle: string,
     link: string,
 }
-const LandingBox = (props: IBox) =>
-{
-    return(
+
+const LandingBox = (props: IBox) => {
+    return (
         <BoxCard style={{backgroundImage: `url(${props.image})`}}>
             <BoxTitle>
                 {props.title}
@@ -42,23 +42,23 @@ const BoxTitle = styled.h3`
   }
 `;
 const BoxCard = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-size: 100%;
-  background-position: bottom;
-  background-repeat: no-repeat;
-  text-align: start;
-  padding: 2.6em;
-
-  width: auto;
-  aspect-ratio: 0.7;
-  background-color: #171718;
-  color: white;
-  border-radius: 20px;
-  transition: all 0.3s ease 0s;
-  
-  :hover{
-    background-size: 102%;
-  }
-    `;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: space-between;
+    background-size: 100%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    width: 100%;
+    text-align: start;
+    padding: 2.6em;
+    aspect-ratio: 0.784;
+    background-color: #171718;
+    color: white;
+    border-radius: 20px;
+    transition: all 0.3s ease 0s;
+    
+    :hover {
+        background-size: 102%;
+    }
+`;
