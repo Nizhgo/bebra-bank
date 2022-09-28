@@ -1,27 +1,22 @@
 import React from "react";
-import {Link} from "react-router-dom";
 import styled from "styled-components";
-import BodyContainer from "../../SharedUi/BodyContainer";
-import {FilledButton} from "../../SharedUi/Buttons";
-import OlegT from "../../Images/oleg-tinkov.png"
-import BrawlS from "../../Images/BrawlS.png"
-import Ryan from "../../Images/Ryan.png"
-import Trump from "../../Images/Trump.png"
-import AccountBoxImg from "../../Images/BoxImage1.png"
-import LandingCard from "../../Images/LandingCard.png";
-import ItsEasyImg from "../../Images/ItsEasyBox.png"
-import LandingCardContainerBackground from "../../Images/LandingCardContainerBackground.png"
+import BrawlS from "../../assets/images/BrawlS.png"
+import ItsEasyImg from "../../assets/images/ItsEasyBox.png"
+import LandingCard from "../../assets/images/LandingCard.png";
+import LandingCardContainerBackground from "../../assets/images/LandingCardContainerBackground.png"
+import OlegT from "../../assets/images/oleg-tinkov.png"
+import Ryan from "../../assets/images/Ryan.png"
+import BodyContainer from "../../components/BodyContainer";
 import LandingBox from "./LandingBox";
 
-const Landing = () =>
-{
-    return(
-        <BodyContainer style={{textAlign:'center'}}>
+const Landing = () => {
+    return (
+        <BodyContainer style={{textAlign: 'center'}}>
             <LandingHeader>
                 Пожалуй, лучший бебра банк<br/><b>в мире</b>*
             </LandingHeader>
             <div style={{height: '20px'}}/>
-            <div style={{display: 'flex', flexDirection:'column', gap: '0.2em', color: 'gray'}}>
+            <div style={{display: 'flex', flexDirection: 'column', gap: '0.2em', color: 'gray'}}>
                 <p>Work in progress</p>
                 <p>Регистрация будет открыта позднее</p>
             </div>

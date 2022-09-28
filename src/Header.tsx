@@ -1,48 +1,50 @@
 import React, {useContext} from "react";
-import BodyContainer from "./SharedUi/BodyContainer";
-import logo from "./Images/logo.svg"
+import {
+    Link,
+    useLocation
+} from "react-router-dom";
 import styled from "styled-components";
-import {Link, useLocation} from "react-router-dom";
-import {AuthContext} from "./Firebase/AuthContext";
-const Header = () =>
-{
+import logo from "./assets/images/logo.svg"
+import {AuthContext} from "./firebase/AuthContext";
+
+const Header = () => {
     const path = useLocation().pathname;
     const {currentUser} = useContext(AuthContext);
-    return(
+    return (
         <HeaderWrapper>
-        <HeaderContainer>
-            {currentUser && path !== '/'?
-                <>
-                    <Link to={'/overview'}>
-                        <HeaderLogo src={logo}/>
-                    </Link>
-                    <Link to={'/profile'}>
-                        <HeaderMenuItem>Профиль</HeaderMenuItem>
-                    </Link>
-                </>
-                :
-                <>
-                    <Link to={'/'}>
-                        <HeaderLogo src={logo}/>
-                    </Link>
-                    <Link to={'/signin'}>
-                        <HeaderMenuItem>Войти</HeaderMenuItem>
-                    </Link>
-                </>
-            }
-        </HeaderContainer>
+            <HeaderContainer>
+                {currentUser && path !== '/' ?
+                    <>
+                        <Link to={'/overview'}>
+                            <HeaderLogo src={logo}/>
+                        </Link>
+                        <Link to={'/profile'}>
+                            <HeaderMenuItem>Профиль</HeaderMenuItem>
+                        </Link>
+                    </>
+                    :
+                    <>
+                        <Link to={'/'}>
+                            <HeaderLogo src={logo}/>
+                        </Link>
+                        <Link to={'/signin'}>
+                            <HeaderMenuItem>Войти</HeaderMenuItem>
+                        </Link>
+                    </>
+                }
+            </HeaderContainer>
         </HeaderWrapper>
     )
 }
 
 const HeaderWrapper = styled.div`
-  margin-top: 15px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 3px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 3px;
 `
 const HeaderContainer = styled.div`
   width: 100%;

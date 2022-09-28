@@ -1,17 +1,19 @@
-import BodyContainer from "../../SharedUi/BodyContainer";
-import {MainTitle, Subtitle, Title} from "../../SharedUi/Titles";
-import styled from "styled-components";
-import Input from "../../SharedUi/Input";
-import {FilledButton, SmallButton} from "../../SharedUi/Buttons";
-import { InputColumnContainer } from "../../SharedUi/InputColumnContainer";
 import React, {useContext} from "react";
-import {AuthContext} from "../../Firebase/AuthContext";
-import firebaseApp from "../../Firebase/FirebaseConfig";
+import styled from "styled-components";
+import BodyContainer from "../../components/BodyContainer";
+import {SmallButton} from "../../components/Buttons";
+import Input from "../../components/Input";
+import {InputColumnContainer} from "../../components/InputColumnContainer";
+import {
+    Subtitle,
+    Title
+} from "../../components/Titles";
+import {AuthContext} from "../../firebase/AuthContext";
+import firebaseApp from "../../firebase/FirebaseConfig";
 
-const Profile = () =>
-{
+const Profile = () => {
     const {currentUser} = useContext(AuthContext);
-    return(
+    return (
         <BodyContainer>
             <Title>Profile</Title>
             <UserInfoContainer>

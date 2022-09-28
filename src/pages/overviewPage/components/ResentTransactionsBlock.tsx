@@ -1,12 +1,12 @@
 import React from "react";
-import {Title} from "../../../SharedUi/Titles";
 import styled from "styled-components";
-import TransactionBlock from "../../../SharedUi/TransactionBlock";
-const ResentTransactionsBlock = () =>
-{
-    return(
+import {Title} from "../../../components/Titles";
+import TransactionBlock from "../../../components/TransactionBlock";
+
+const ResentTransactionsBlock = () => {
+    return (
         <ResentTransactionsComponentContainer>
-            <Title style={{marginTop:'0'}}>
+            <Title style={{marginTop: '0'}}>
                 Resent transactions
             </Title>
             <TransactionsContainer>

@@ -1,19 +1,25 @@
-import React, {useContext, useEffect, useRef, useState} from "react";
-import styled from "styled-components";
-import BodyContainer from "../../SharedUi/BodyContainer";
-import Input from "../../SharedUi/Input";
-import {Formik, FormikValues} from "formik";
-import {FilledButton} from "../../SharedUi/Buttons";
-import {MainTitle, Title} from "../../SharedUi/Titles";
-import BlackCard from "../../Images/Cards/BlackCard.svg"
-import {Subtitle} from "../../SharedUi/Titles";
-import * as yup from 'yup';
-import { InputColumnContainer } from "../../SharedUi/InputColumnContainer";
-import CardSelection from "../../SharedUi/CardSelection";
-import firebaseApp from "../../Firebase/FirebaseConfig";
 import 'firebase/compat/auth';
-import {AuthContext} from "../../Firebase/AuthContext";
-import {Navigate} from "react-router-dom";
+import {Formik} from "formik";
+import React, {
+    useContext,
+    useEffect,
+    useState
+} from "react";
+import styled from "styled-components";
+import * as yup from 'yup';
+import BlackCard from "../../assets/images/Cards/BlackCard.svg"
+import BodyContainer from "../../components/BodyContainer";
+import {FilledButton} from "../../components/Buttons";
+import CardSelection from "../../components/CardSelection";
+import Input from "../../components/Input";
+import {InputColumnContainer} from "../../components/InputColumnContainer";
+import {
+    MainTitle,
+    Subtitle,
+    Title
+} from "../../components/Titles";
+import {AuthContext} from "../../firebase/AuthContext";
+import firebaseApp from "../../firebase/FirebaseConfig";
 
 interface ISignUpForm {
     name: string,
@@ -23,6 +29,7 @@ interface ISignUpForm {
     cardStyle: string,
     //date: number,
 }
+
 const ValidationSchema = yup.object().shape({
     name: yup.string().typeError('Имя может содержать только буквы').required('Обязательно'),
     surname: yup.string().typeError('Фамилия может содержать только буквы').required('Обязательно'),

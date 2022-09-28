@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import BlackCard from "../Images/Cards/BlackCard.svg";
-import WhiteCard from "../Images/Cards/WhiteCard.svg";
-import AmazingCard from "../Images/Cards/AmazingCard.svg";
-import PaintCard from "../Images/Cards/PaintCard.svg";
-import MalevichCard from "../Images/Cards/MalevichCard.svg";
-import JapanCard from "../Images/Cards/JapanCard.svg";
-import DigitalCard from "../Images/Cards/BlueDigital.svg";
-import FrogCard from "../Images/Cards/FrogCard.svg";
+import AmazingCard from "../assets/images/Cards/AmazingCard.svg";
+import BlackCard from "../assets/images/Cards/BlackCard.svg";
+import DigitalCard from "../assets/images/Cards/BlueDigital.svg";
+import FrogCard from "../assets/images/Cards/FrogCard.svg";
+import JapanCard from "../assets/images/Cards/JapanCard.svg";
+import MalevichCard from "../assets/images/Cards/MalevichCard.svg";
+import PaintCard from "../assets/images/Cards/PaintCard.svg";
+import WhiteCard from "../assets/images/Cards/WhiteCard.svg";
 
 
 const Cards: string[] = [

@@ -9,7 +9,7 @@ interface IPrivateRoute {
 
 function PrivateRoute(props: IPrivateRoute) {
     const {condition, element, navigateTo} = props;
-    return condition ?  element : <Navigate to={navigateTo || '/'} />;
+    return condition ? element : <Navigate to={navigateTo || '/'}/>;
 }
 
 export default PrivateRoute;

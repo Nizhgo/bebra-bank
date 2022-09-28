@@ -1,25 +1,24 @@
 import React from "react";
-import styled from "styled-components";
-import {FilledButton} from "../../../SharedUi/Buttons";
-import ArrayForwardIcon from "../../../Images/arrow_forward_white_24dp.svg"
-import TopUpIcon from "../../../Images/account_balance_wallet_white_24dp.svg"
 import {Link} from "react-router-dom";
+import styled from "styled-components";
+import TopUpIcon from "../../../assets/images/account_balance_wallet_white_24dp.svg"
+import ArrayForwardIcon from "../../../assets/images/arrow_forward_white_24dp.svg"
+import {FilledButton} from "../../../components/Buttons";
 
-const BalanceBlock = () =>
-{
-    return(
-    <BalanceBlockContainer>
-        <BalanceTitle>Balance:</BalanceTitle>
-        <BalanceAmount>B 3124.4</BalanceAmount>
+const BalanceBlock = () => {
+    return (
+        <BalanceBlockContainer>
+            <BalanceTitle>Balance:</BalanceTitle>
+            <BalanceAmount>B 3124.4</BalanceAmount>
             <BalanceButtonsContainer>
                 <Link to={'/pay-or-transfer'}>
-                <StrangeButton icon={ArrayForwardIcon} header={'Pay or transfer'}/>
+                    <StrangeButton icon={ArrayForwardIcon} header={'Pay or transfer'}/>
                 </Link>
                 <Link to={'/topup'}>
-                <StrangeButton icon={TopUpIcon} header={'Top Up'}/>
+                    <StrangeButton icon={TopUpIcon} header={'Top Up'}/>
                 </Link>
             </BalanceButtonsContainer>
-    </BalanceBlockContainer>
+        </BalanceBlockContainer>
     )
 }
 

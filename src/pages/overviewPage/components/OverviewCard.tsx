@@ -1,9 +1,8 @@
 import React, {useState} from "react";
 import styled from "styled-components";
-import Explained from "../../../Images/expand_more_white_24dp.svg";
-import Input from "../../../SharedUi/Input";
-import BalanceBlock from "./BalanceBlock";
-import {FilledButton, SmallButton} from "../../../SharedUi/Buttons";
+import Explained from "../../../assets/images/expand_more_white_24dp.svg";
+import {SmallButton} from "../../../components/Buttons";
+import Input from "../../../components/Input";
 
 interface IOverviewCard {
     image: string,
@@ -11,16 +10,21 @@ interface IOverviewCard {
     balance: number,
 }
 
-const OverviewCard = (props :IOverviewCard) =>
-{
+const OverviewCard = (props: IOverviewCard) => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
-    return(
+    return (
         <div>
-            <div style={{display:"flex", marginTop:'20px', alignItems:'center', justifyContent:'space-between'}} onClick={() => setIsOpen(val => !val)}>
-                <div style={{display:'flex'}}>
-                    <CardImg style={{height:'44px', width:'auto'}} src={props.image}/>
-                    <div style={{display:'flex', flexDirection:'column', justifyContent:'center', marginLeft:'20px'}}>
-                        <p style={{whiteSpace:'nowrap'}}>{props.title}</p>
+            <div style={{display: "flex", marginTop: '20px', alignItems: 'center', justifyContent: 'space-between'}}
+                 onClick={() => setIsOpen(val => !val)}>
+                <div style={{display: 'flex'}}>
+                    <CardImg style={{height: '44px', width: 'auto'}} src={props.image}/>
+                    <div style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        marginLeft: '20px'
+                    }}>
+                        <p style={{whiteSpace: 'nowrap'}}>{props.title}</p>
                         <p>{props.balance + 'B'}</p>
                     </div>
                 </div>
@@ -29,10 +33,10 @@ const OverviewCard = (props :IOverviewCard) =>
             {isOpen &&
                 <CardInfo>
                     <CardData onChange={''} title={'Card number'} type={'text'} value={'3133 3232 5344 4597'}/>
-                        <CardInfoContainer>
-                            <CardData title={'CVV'} type={'text'} value={'123'}/>
-                            <CardData title={'Exp date'} type={'text'} value={'12/29'}/>
-                        </CardInfoContainer>
+                    <CardInfoContainer>
+                        <CardData title={'CVV'} type={'text'} value={'123'}/>
+                        <CardData title={'Exp date'} type={'text'} value={'12/29'}/>
+                    </CardInfoContainer>
                     <CardInfoBtnRow>
                         <SmallButton>Close</SmallButton>
                         <SmallButton>Reissue</SmallButton>
